@@ -83,4 +83,4 @@ function yes() {
     document.getElementById("proposal").style.display = "none";
 
     document.getElementById("final").style.display = "block";
-    
+
