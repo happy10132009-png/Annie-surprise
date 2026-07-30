@@ -136,3 +136,13 @@ opacity:1;
 .song-btn:hover{
     transform:scale(1.08);
 }
+#letter p{
+line-height:1.8;
+font-size:18px;
+}
+
+#proposal p,
+#final p{
+font-size:18px;
+line-height:1.7;
+}
