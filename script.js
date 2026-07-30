@@ -83,20 +83,4 @@ function yes() {
     document.getElementById("proposal").style.display = "none";
 
     document.getElementById("final").style.display = "block";
-
-}
-.song-btn{
-display:inline-block;
-padding:12px 25px;
-background:#ff2e63;
-color:white;
-text-decoration:none;
-border-radius:30px;
-margin:10px;
-font-size:18px;
-transition:.3s;
-}
-
-.song-btn:hover{
-transform:scale(1.08);
-}
+    
