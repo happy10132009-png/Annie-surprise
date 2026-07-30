@@ -1,153 +1,154 @@
-<div id="lockScreen">
-    <h1>🔐 Welcome Annie ❤️</h1>
-    <p>Enter Our Secret Password</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Annie ❤️</title>
 
-    <input type="password" id="pass" placeholder="Password">
+<link rel="stylesheet" href="style.css">
 
-    <br><br>
+</head>
 
-    <button onclick="checkPass()">Unlock ❤️</button>
+<body>
 
-    <p id="wrong"></p>
-</div>
+<div id="hearts"></div>
 
-<div id="main" style="display:none">
+<!-- Password Screen -->
+
+<div id="login" class="card">
 
 <h1>❤️ Welcome Annie ❤️</h1>
 
-<p class="msg">
-Every moment with you is special ❤️
-</p>
+<p>Enter Our Secret Password</p>
 
-<button onclick="loveLetter()">
-Open My Heart ❤️
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<br>
+
+<button onclick="unlock()">
+Unlock ❤️
 </button>
 
-<div id="letter"></div>
+<p id="error"></p>
 
 </div>
 
-<style>
+<!-- Main Website -->
 
-body{
-margin:0;
-background:#ffb6c1;
-font-family:Arial;
-text-align:center;
-overflow:hidden;
-}
+<div id="main">
 
-#lockScreen{
-margin-top:120px;
-}
+<h1 class="title">
+For My Beautiful Annie ❤️
+</h1>
 
-input{
-padding:12px;
-font-size:18px;
-border-radius:10px;
-border:none;
-}
+<div class="slideshow">
 
-button{
-padding:12px 30px;
-font-size:18px;
-border:none;
-border-radius:30px;
-background:#ff3366;
-color:white;
-}
+<img
+id="slide"
+src="photo1.jpg">
 
-.msg{
-font-size:22px;
-}
+</div>
 
-#letter{
-margin-top:30px;
-font-size:22px;
-padding:20px;
-color:white;
-}
+<p id="typing"></p>
 
-.heart{
-position:fixed;
-color:red;
-animation:fly 6s linear infinite;
-}
+<div class="buttons">
 
-@keyframes fly{
+<button onclick="showLetter()">
 
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
+💌 Read My Letter
 
-100%{
-transform:translateY(-100vh);
-opacity:1;
-}
+</button>
 
-}
+<a
+href="https://youtu.be/M5OCLifZK1w?si=QpjR-IPQEziYkYHI"
+target="_blank">
 
-</style>
+<button>
 
-<script>
+🎵 Play Our Song
 
-function checkPass(){
+</button>
 
-let p=document.getElementById("pass").value;
+</a>
 
-if(p=="1505"){
+</div>
 
-document.getElementById("lockScreen").style.display="none";
+<div id="letter">
 
-document.getElementById("main").style.display="block";
+<h2>Dear Annie ❤️</h2>
 
-hearts();
+<p>
 
-}
+I don't know what tomorrow brings...
 
-else{
+But I know one thing...
 
-document.getElementById("wrong").innerHTML="❌ Wrong Password";
+I want every tomorrow with you.
 
-}
+You are my happiness,
 
-}
+my peace,
 
-function hearts(){
+my smile,
 
-for(let i=0;i<40;i++){
+my everything.
 
-let h=document.createElement("div");
+❤️ Forever Yours ❤️
 
-h.innerHTML="❤️";
+</p>
 
-h.className="heart";
+<button onclick="proposal()">
 
-h.style.left=Math.random()*100+"vw";
+Continue ❤️
 
-h.style.fontSize=(20+Math.random()*20)+"px";
+</button>
 
-h.style.animationDuration=(4+Math.random()*5)+"s";
+</div>
 
-document.body.appendChild(h);
+<div id="proposal">
 
-}
+<h1>
 
-}
+Will You Be Mine Forever?
 
-function loveLetter(){
+❤️
 
-document.getElementById("letter").innerHTML=
+</h1>
 
-`Dear Annie ❤️<br><br>
+<button onclick="yes()">
 
-You are the most beautiful chapter of my life.
+YES ❤️
 
-Thank you for making my world brighter.
+</button>
 
-I Love You Forever ❤️`;
+</div>
 
-}
+<div id="final">
 
-</script>
+<h1>
+
+🎉 I Love You Forever Annie ❤️
+
+</h1>
+
+<p>
+
+Thank you for coming into my life.
+
+You are my favorite person forever.
+
+❤️❤️❤️
+
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
