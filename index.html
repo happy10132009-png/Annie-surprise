@@ -1,143 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Annie ❤️</title>
+<div id="lockScreen">
+    <h1>🔐 Welcome Annie ❤️</h1>
+    <p>Enter Our Secret Password</p>
+
+    <input type="password" id="pass" placeholder="Password">
+
+    <br><br>
+
+    <button onclick="checkPass()">Unlock ❤️</button>
+
+    <p id="wrong"></p>
+</div>
+
+<div id="main" style="display:none">
+
+<h1>❤️ Welcome Annie ❤️</h1>
+
+<p class="msg">
+Every moment with you is special ❤️
+</p>
+
+<button onclick="loveLetter()">
+Open My Heart ❤️
+</button>
+
+<div id="letter"></div>
+
+</div>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
 
 body{
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-overflow:hidden;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.container{
+margin:0;
+background:#ffb6c1;
+font-family:Arial;
 text-align:center;
-color:white;
-z-index:2;
+overflow:hidden;
 }
 
-h1{
-font-size:45px;
-animation:fade 2s ease;
+#lockScreen{
+margin-top:120px;
 }
 
-p{
-margin-top:20px;
-font-size:22px;
-animation:fade 3s ease;
+input{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:none;
 }
 
 button{
-margin-top:35px;
-padding:15px 35px;
-font-size:20px;
+padding:12px 30px;
+font-size:18px;
 border:none;
-border-radius:40px;
+border-radius:30px;
 background:#ff3366;
 color:white;
-cursor:pointer;
-box-shadow:0 0 20px rgba(255,255,255,.5);
-transition:.3s;
 }
 
-button:hover{
-transform:scale(1.1);
+.msg{
+font-size:22px;
+}
+
+#letter{
+margin-top:30px;
+font-size:22px;
+padding:20px;
+color:white;
 }
 
 .heart{
-position:absolute;
+position:fixed;
 color:red;
-font-size:25px;
-animation:float 8s linear infinite;
+animation:fly 6s linear infinite;
 }
 
-@keyframes float{
+@keyframes fly{
+
 0%{
 transform:translateY(100vh);
 opacity:0;
 }
+
 100%{
 transform:translateY(-100vh);
 opacity:1;
 }
+
 }
 
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
 </style>
-</head>
-
-<body>
-
-<div class="container">
-<h1>❤️ Welcome Annie ❤️</h1>
-
-<p>
-You are the most beautiful part of my life. 💖
-</p>
-
-<button onclick="nextPage()">
-Open My Heart ❤️
-</button>
-
-</div>
 
 <script>
 
-for(let i=0;i<40;i++){
+function checkPass(){
 
-let heart=document.createElement("div");
+let p=document.getElementById("pass").value;
 
-heart.className="heart";
+if(p=="1505"){
 
-heart.innerHTML="❤️";
+document.getElementById("lockScreen").style.display="none";
 
-heart.style.left=Math.random()*100+"vw";
+document.getElementById("main").style.display="block";
 
-heart.style.animationDuration=(5+Math.random()*5)+"s";
-
-heart.style.fontSize=(15+Math.random()*25)+"px";
-
-document.body.appendChild(heart);
+hearts();
 
 }
 
-function nextPage(){
+else{
 
-document.querySelector(".container").innerHTML=`
+document.getElementById("wrong").innerHTML="❌ Wrong Password";
 
-<h1>I Love You Annie ❤️</h1>
+}
 
-<p style="margin-top:25px;">
-Every moment with you feels magical ✨<br><br>
-Thank you for coming into my life ❤️
-</p>
+}
 
-`;
+function hearts(){
+
+for(let i=0;i<40;i++){
+
+let h=document.createElement("div");
+
+h.innerHTML="❤️";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+h.style.animationDuration=(4+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+}
+
+}
+
+function loveLetter(){
+
+document.getElementById("letter").innerHTML=
+
+`Dear Annie ❤️<br><br>
+
+You are the most beautiful chapter of my life.
+
+Thank you for making my world brighter.
+
+I Love You Forever ❤️`;
 
 }
 
 </script>
-
-</body>
-</html>
