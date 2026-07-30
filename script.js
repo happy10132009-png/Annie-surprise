@@ -84,3 +84,6 @@ function yes() {
 
     document.getElementById("final").style.display = "block";
 
+    alert("❤️ I Love You Forever Annie ❤️");
+
+}
